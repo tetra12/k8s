@@ -64,6 +64,9 @@ spec:
             {{- if .Values.statefulSet.extraArgs }}
               {{- toYaml .Values.statefulSet.extraArgs | nindent 12 }}
             {{- end }}
+          ports:
+          - containerPort: 80
+            name: web
           volumeMounts:
             - name: {{ include "kratos.fullname" . }}-config-volume
               mountPath: /etc/config
