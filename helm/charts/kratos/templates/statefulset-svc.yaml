@@ -24,7 +24,7 @@ spec:
     - port: {{ .Values.service.public.port }}
       targetPort: 80
       protocol: TCP
-      name: web
+      name: http
   selector:
     app.kubernetes.io/name: {{ include "kratos.fullname" . }}-courier
     app.kubernetes.io/instance: {{ .Release.Name }}
